@@ -232,41 +232,21 @@ ul { margin: 0; padding: 0; list-style: none; }
 .stat-label { font-size: 0.9rem; color: var(--color-ink-muted); }
 
 /* ----------------------------- Marquee ----------------------------- */
-.marquee-section { padding-block: 44px; background: var(--color-bg-alt); border-block: 1px solid var(--color-border); }
+.marquee-section { padding-block: 48px; background: var(--color-bg-alt); border-block: 1px solid var(--color-border); }
 .marquee-title {
     text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: var(--color-primary);
-    margin-bottom: 26px;
+    text-transform: none;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--color-ink);
+    margin-bottom: 32px;
 }
 .marquee { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
-.marquee-track { display: flex; align-items: center; gap: 56px; width: max-content; animation: scroll-x 36s linear infinite; }
+.marquee-track { display: flex; gap: 64px; width: max-content; animation: scroll-x 30s linear infinite; }
 .marquee:hover .marquee-track { animation-play-state: paused; }
-.brand {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    font-size: 1.05rem;
-    font-weight: 600;
-    line-height: 1;
-    color: var(--color-ink-soft);
-    letter-spacing: -0.01em;
-    white-space: nowrap;
-    transition: color var(--speed) var(--ease);
-}
-/* dot separator between items */
-.brand::before {
-    content: "";
-    position: absolute;
-    left: -28px;
-    width: 5px; height: 5px;
-    border-radius: 50%;
-    background: var(--color-border);
-}
-.brand:hover { color: var(--color-primary); }
+.brand { font-size: 1.4rem; font-weight: 800; color: var(--color-ink-muted); opacity: 0.65; letter-spacing: -0.02em; transition: opacity var(--speed) var(--ease), color var(--speed) var(--ease); }
+.brand:hover { opacity: 1; color: var(--color-primary); }
 @keyframes scroll-x { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
 /* ----------------------------- Who We Are ----------------------------- */
